@@ -61,26 +61,3 @@ public readonly name: string;
 
 ---
 
-### IUserPoolProps <a name="IUserPoolProps" id="cdk-multi-tenant.IUserPoolProps"></a>
-
-- *Implemented By:* <a href="#cdk-multi-tenant.IUserPoolProps">IUserPoolProps</a>
-
-
-#### Properties <a name="Properties" id="Properties"></a>
-
-| **Name** | **Type** | **Description** |
-| --- | --- | --- |
-| <code><a href="#cdk-multi-tenant.IUserPoolProps.property.name">name</a></code> | <code>string</code> | *No description.* |
-
----
-
-##### `name`<sup>Required</sup> <a name="name" id="cdk-multi-tenant.IUserPoolProps.property.name"></a>
-
-```typescript
-public readonly name: string;
-```
-
-- *Type:* string
-
----
-
