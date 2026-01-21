@@ -1,8 +1,6 @@
 import { Duration, RemovalPolicy } from 'aws-cdk-lib';
-import { ClientAttributes, FeaturePlan, LambdaVersion, StringAttribute, UserPool, UserPoolClient, UserPoolOperation, UserPoolProps } from 'aws-cdk-lib/aws-cognito';
+import { ClientAttributes, FeaturePlan, StringAttribute, UserPool, UserPoolClient, UserPoolProps } from 'aws-cdk-lib/aws-cognito';
 import { OpenIdConnectPrincipal, OpenIdConnectProvider, PrincipalBase } from 'aws-cdk-lib/aws-iam';
-import { Code, Runtime } from 'aws-cdk-lib/aws-lambda';
-import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 
 export class MultiTenantUserPool extends UserPool {
@@ -55,51 +53,5 @@ export class MultiTenantUserPool extends UserPool {
         },
       });
     return oidcPrincipal.withSessionTags();
-  }
-}
-
-export interface MultiTenantPreTokenGenerationProps {
-  readonly domainPrefix: string;
-  readonly userPool: UserPool;
-}
-
-export class MultiTenantPreTokenGeneration extends Construct {
-  constructor(scope: Construct, id: string, props: MultiTenantPreTokenGenerationProps) {
-    super(scope, id);
-    const { domainPrefix, userPool } = props;
-    userPool.addDomain(domainPrefix, {
-      cognitoDomain: {
-        domainPrefix: domainPrefix,
-      },
-    });
-    const preTokenGenerationFn = new NodejsFunction(this, 'PreTokenGenerationFn', {
-      code: Code.fromInline(`
-export const handler = function(event: any, context: any) {
-  const userAttributes = event.request.userAttributes;
-  event.response = {
-    claimsAndScopeOverrideDetails: {
-      idTokenGeneration: {
-        claimsToAddOrOverride: {
-          'https://aws.amazon.com/tags': {
-            principal_tags: {
-              tenantId: [userAttributes['custom:tenantId']],
-              role: [userAttributes['custom:role']],
-            },
-          },
-        },
-      },
-    },
-  };
-  context.done(null, event);
-};`),
-      bundling: {
-        nodeModules: ['re2-wasm'],
-        externalModules: [],
-      },
-      runtime: Runtime.NODEJS_LATEST,
-      handler: 'handler',
-      timeout: Duration.seconds(30),
-    });
-    userPool.addTrigger(UserPoolOperation.PRE_TOKEN_GENERATION_CONFIG, preTokenGenerationFn, LambdaVersion.V2_0);
   }
 }
