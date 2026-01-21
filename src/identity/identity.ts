@@ -92,7 +92,7 @@ export const handler = function(event: any, context: any) {
   };
   context.done(null, event);
 };
-      `),
+`),
       runtime: Runtime.NODEJS_LATEST,
       handler: 'handler',
       timeout: Duration.seconds(30),
