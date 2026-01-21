@@ -1116,7 +1116,6 @@ Import an existing user pool based on its id.
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.property.userPoolProviderName">userPoolProviderName</a></code> | <code>string</code> | User pool provider name. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.property.userPoolProviderUrl">userPoolProviderUrl</a></code> | <code>string</code> | User pool provider URL. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.property.userPoolRef">userPoolRef</a></code> | <code>aws-cdk-lib.interfaces.aws_cognito.UserPoolReference</code> | A reference to a UserPool resource. |
-| <code><a href="#cdk-multi-tenant.MultiTenantUserPool.property.userPoolClient">userPoolClient</a></code> | <code>aws-cdk-lib.aws_cognito.UserPoolClient</code> | *No description.* |
 
 ---
 
@@ -1233,16 +1232,6 @@ public readonly userPoolRef: UserPoolReference;
 - *Type:* aws-cdk-lib.interfaces.aws_cognito.UserPoolReference
 
 A reference to a UserPool resource.
-
----
-
-##### `userPoolClient`<sup>Required</sup> <a name="userPoolClient" id="cdk-multi-tenant.MultiTenantUserPool.property.userPoolClient"></a>
-
-```typescript
-public readonly userPoolClient: UserPoolClient;
-```
-
-- *Type:* aws-cdk-lib.aws_cognito.UserPoolClient
 
 ---
 

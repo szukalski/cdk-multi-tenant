@@ -5,7 +5,6 @@ import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 
 export class MultiTenantUserPool extends UserPool {
-  public readonly userPoolClient: UserPoolClient;
   constructor(scope: Construct, id: string, props?: UserPoolProps) {
     super(scope, id, {
       featurePlan: FeaturePlan.ESSENTIALS,
@@ -26,7 +25,6 @@ export class MultiTenantUserPool extends UserPool {
       removalPolicy: RemovalPolicy.DESTROY,
       ...props,
     });
-    this.userPoolClient = this.addMultiTenantClient();
   }
   addMultiTenantClient(): UserPoolClient {
     return this.addClient('UserPoolClient', {
