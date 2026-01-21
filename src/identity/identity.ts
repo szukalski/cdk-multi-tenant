@@ -91,8 +91,11 @@ export const handler = function(event: any, context: any) {
     },
   };
   context.done(null, event);
-};
-`),
+};`),
+      bundling: {
+        nodeModules: ['re2-wasm'],
+        externalModules: [],
+      },
       runtime: Runtime.NODEJS_LATEST,
       handler: 'handler',
       timeout: Duration.seconds(30),
