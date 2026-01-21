@@ -1259,6 +1259,152 @@ Uniquely identifies this class.
 
 ---
 
+### SmithyServer <a name="SmithyServer" id="cdk-multi-tenant.SmithyServer"></a>
+
+#### Initializers <a name="Initializers" id="cdk-multi-tenant.SmithyServer.Initializer"></a>
+
+```typescript
+import { SmithyServer } from 'cdk-multi-tenant'
+
+new SmithyServer(scope: Construct, id: string, props: SmithyServerProps)
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-multi-tenant.SmithyServer.Initializer.parameter.scope">scope</a></code> | <code>constructs.Construct</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServer.Initializer.parameter.id">id</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServer.Initializer.parameter.props">props</a></code> | <code><a href="#cdk-multi-tenant.SmithyServerProps">SmithyServerProps</a></code> | *No description.* |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="cdk-multi-tenant.SmithyServer.Initializer.parameter.scope"></a>
+
+- *Type:* constructs.Construct
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="cdk-multi-tenant.SmithyServer.Initializer.parameter.id"></a>
+
+- *Type:* string
+
+---
+
+##### `props`<sup>Required</sup> <a name="props" id="cdk-multi-tenant.SmithyServer.Initializer.parameter.props"></a>
+
+- *Type:* <a href="#cdk-multi-tenant.SmithyServerProps">SmithyServerProps</a>
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-multi-tenant.SmithyServer.toString">toString</a></code> | Returns a string representation of this construct. |
+
+---
+
+##### `toString` <a name="toString" id="cdk-multi-tenant.SmithyServer.toString"></a>
+
+```typescript
+public toString(): string
+```
+
+Returns a string representation of this construct.
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#cdk-multi-tenant.SmithyServer.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="cdk-multi-tenant.SmithyServer.isConstruct"></a>
+
+```typescript
+import { SmithyServer } from 'cdk-multi-tenant'
+
+SmithyServer.isConstruct(x: any)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="cdk-multi-tenant.SmithyServer.isConstruct.parameter.x"></a>
+
+- *Type:* any
+
+Any object.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-multi-tenant.SmithyServer.property.node">node</a></code> | <code>constructs.Node</code> | The tree node. |
+| <code><a href="#cdk-multi-tenant.SmithyServer.property.api">api</a></code> | <code>aws-cdk-lib.aws_apigateway.SpecRestApi</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServer.property.serviceFunction">serviceFunction</a></code> | <code>aws-cdk-lib.aws_lambda.IFunction</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServer.property.serviceAuthorizer">serviceAuthorizer</a></code> | <code>aws-cdk-lib.aws_lambda.IFunction</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="cdk-multi-tenant.SmithyServer.property.node"></a>
+
+```typescript
+public readonly node: Node;
+```
+
+- *Type:* constructs.Node
+
+The tree node.
+
+---
+
+##### `api`<sup>Required</sup> <a name="api" id="cdk-multi-tenant.SmithyServer.property.api"></a>
+
+```typescript
+public readonly api: SpecRestApi;
+```
+
+- *Type:* aws-cdk-lib.aws_apigateway.SpecRestApi
+
+---
+
+##### `serviceFunction`<sup>Required</sup> <a name="serviceFunction" id="cdk-multi-tenant.SmithyServer.property.serviceFunction"></a>
+
+```typescript
+public readonly serviceFunction: IFunction;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.IFunction
+
+---
+
+##### `serviceAuthorizer`<sup>Optional</sup> <a name="serviceAuthorizer" id="cdk-multi-tenant.SmithyServer.property.serviceAuthorizer"></a>
+
+```typescript
+public readonly serviceAuthorizer: IFunction;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.IFunction
+
+---
+
+
 ## Structs <a name="Structs" id="Structs"></a>
 
 ### MultiTenantPreTokenGenerationProps <a name="MultiTenantPreTokenGenerationProps" id="cdk-multi-tenant.MultiTenantPreTokenGenerationProps"></a>
@@ -1297,6 +1443,89 @@ public readonly userPool: UserPool;
 ```
 
 - *Type:* aws-cdk-lib.aws_cognito.UserPool
+
+---
+
+### SmithyServerProps <a name="SmithyServerProps" id="cdk-multi-tenant.SmithyServerProps"></a>
+
+#### Initializer <a name="Initializer" id="cdk-multi-tenant.SmithyServerProps.Initializer"></a>
+
+```typescript
+import { SmithyServerProps } from 'cdk-multi-tenant'
+
+const smithyServerProps: SmithyServerProps = { ... }
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#cdk-multi-tenant.SmithyServerProps.property.openApiPath">openApiPath</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServerProps.property.serviceFunction">serviceFunction</a></code> | <code>aws-cdk-lib.aws_lambda.IFunction</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServerProps.property.serviceName">serviceName</a></code> | <code>string</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServerProps.property.logGroup">logGroup</a></code> | <code>aws-cdk-lib.aws_logs.ILogGroup</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServerProps.property.serviceAuthorizer">serviceAuthorizer</a></code> | <code>aws-cdk-lib.aws_lambda.IFunction</code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.SmithyServerProps.property.specRestApiProps">specRestApiProps</a></code> | <code>aws-cdk-lib.aws_apigateway.SpecRestApiProps</code> | *No description.* |
+
+---
+
+##### `openApiPath`<sup>Required</sup> <a name="openApiPath" id="cdk-multi-tenant.SmithyServerProps.property.openApiPath"></a>
+
+```typescript
+public readonly openApiPath: string;
+```
+
+- *Type:* string
+
+---
+
+##### `serviceFunction`<sup>Required</sup> <a name="serviceFunction" id="cdk-multi-tenant.SmithyServerProps.property.serviceFunction"></a>
+
+```typescript
+public readonly serviceFunction: IFunction;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.IFunction
+
+---
+
+##### `serviceName`<sup>Required</sup> <a name="serviceName" id="cdk-multi-tenant.SmithyServerProps.property.serviceName"></a>
+
+```typescript
+public readonly serviceName: string;
+```
+
+- *Type:* string
+
+---
+
+##### `logGroup`<sup>Optional</sup> <a name="logGroup" id="cdk-multi-tenant.SmithyServerProps.property.logGroup"></a>
+
+```typescript
+public readonly logGroup: ILogGroup;
+```
+
+- *Type:* aws-cdk-lib.aws_logs.ILogGroup
+
+---
+
+##### `serviceAuthorizer`<sup>Optional</sup> <a name="serviceAuthorizer" id="cdk-multi-tenant.SmithyServerProps.property.serviceAuthorizer"></a>
+
+```typescript
+public readonly serviceAuthorizer: IFunction;
+```
+
+- *Type:* aws-cdk-lib.aws_lambda.IFunction
+
+---
+
+##### `specRestApiProps`<sup>Optional</sup> <a name="specRestApiProps" id="cdk-multi-tenant.SmithyServerProps.property.specRestApiProps"></a>
+
+```typescript
+public readonly specRestApiProps: SpecRestApiProps;
+```
+
+- *Type:* aws-cdk-lib.aws_apigateway.SpecRestApiProps
 
 ---
 
