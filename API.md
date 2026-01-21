@@ -790,6 +790,8 @@ new MultiTenantUserPool(scope: Construct, id: string, props?: UserPoolProps)
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.grant">grant</a></code> | [disable-awslint:no-grants]. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.registerIdentityProvider">registerIdentityProvider</a></code> | Register an identity provider with this user pool. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.addMultiTenantClient">addMultiTenantClient</a></code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.MultiTenantUserPool.addOidcProvider">addOidcProvider</a></code> | *No description.* |
+| <code><a href="#cdk-multi-tenant.MultiTenantUserPool.getOidcPrincipal">getOidcPrincipal</a></code> | *No description.* |
 
 ---
 
@@ -970,6 +972,42 @@ Register an identity provider with this user pool.
 ```typescript
 public addMultiTenantClient(): UserPoolClient
 ```
+
+##### `addOidcProvider` <a name="addOidcProvider" id="cdk-multi-tenant.MultiTenantUserPool.addOidcProvider"></a>
+
+```typescript
+public addOidcProvider(oidcEndpoint: string, userPoolClientId: string): OpenIdConnectProvider
+```
+
+###### `oidcEndpoint`<sup>Required</sup> <a name="oidcEndpoint" id="cdk-multi-tenant.MultiTenantUserPool.addOidcProvider.parameter.oidcEndpoint"></a>
+
+- *Type:* string
+
+---
+
+###### `userPoolClientId`<sup>Required</sup> <a name="userPoolClientId" id="cdk-multi-tenant.MultiTenantUserPool.addOidcProvider.parameter.userPoolClientId"></a>
+
+- *Type:* string
+
+---
+
+##### `getOidcPrincipal` <a name="getOidcPrincipal" id="cdk-multi-tenant.MultiTenantUserPool.getOidcPrincipal"></a>
+
+```typescript
+public getOidcPrincipal(oidcProvider: OpenIdConnectProvider, userPoolClientId: string): PrincipalBase
+```
+
+###### `oidcProvider`<sup>Required</sup> <a name="oidcProvider" id="cdk-multi-tenant.MultiTenantUserPool.getOidcPrincipal.parameter.oidcProvider"></a>
+
+- *Type:* aws-cdk-lib.aws_iam.OpenIdConnectProvider
+
+---
+
+###### `userPoolClientId`<sup>Required</sup> <a name="userPoolClientId" id="cdk-multi-tenant.MultiTenantUserPool.getOidcPrincipal.parameter.userPoolClientId"></a>
+
+- *Type:* string
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 

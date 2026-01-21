@@ -1,5 +1,6 @@
 import { Duration, RemovalPolicy } from 'aws-cdk-lib';
 import { ClientAttributes, FeaturePlan, LambdaVersion, StringAttribute, UserPool, UserPoolClient, UserPoolOperation, UserPoolProps } from 'aws-cdk-lib/aws-cognito';
+import { OpenIdConnectPrincipal, OpenIdConnectProvider, PrincipalBase } from 'aws-cdk-lib/aws-iam';
 import { Code, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
@@ -37,6 +38,23 @@ export class MultiTenantUserPool extends UserPool {
       idTokenValidity: Duration.minutes(60),
       refreshTokenValidity: Duration.days(30),
     });
+  }
+  addOidcProvider(oidcEndpoint: string, userPoolClientId: string): OpenIdConnectProvider {
+    return new OpenIdConnectProvider(this, 'MyOidcProvider', {
+      url: oidcEndpoint,
+      clientIds: [
+        userPoolClientId,
+      ],
+    });
+  }
+  getOidcPrincipal(oidcProvider: OpenIdConnectProvider, userPoolClientId: string): PrincipalBase {
+    const oidcPrincipal = new OpenIdConnectPrincipal(oidcProvider)
+      .withConditions({
+        'ForAllValues:StringEquals': {
+          'cognito-identity.amazonaws.com:aud': userPoolClientId,
+        },
+      });
+    return oidcPrincipal.withSessionTags();
   }
 }
 
