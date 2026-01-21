@@ -1,16 +1,12 @@
 import { Duration, RemovalPolicy } from 'aws-cdk-lib';
-import { ClientAttributes, FeaturePlan, LambdaVersion, StringAttribute, UserPool, UserPoolClient, UserPoolOperation } from 'aws-cdk-lib/aws-cognito';
+import { ClientAttributes, FeaturePlan, LambdaVersion, StringAttribute, UserPool, UserPoolClient, UserPoolOperation, UserPoolProps } from 'aws-cdk-lib/aws-cognito';
 import { Code, Runtime } from 'aws-cdk-lib/aws-lambda';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Construct } from 'constructs';
 
-export interface IUserPoolProps {
-  name: string;
-}
-
 export class MultiTenantUserPool extends UserPool {
   public readonly userPoolClient: UserPoolClient;
-  constructor(scope: Construct, id: string, props?: IUserPoolProps) {
+  constructor(scope: Construct, id: string, props?: UserPoolProps) {
     super(scope, id, {
       featurePlan: FeaturePlan.ESSENTIALS,
       selfSignUpEnabled: false,

@@ -1,6 +1,2 @@
-export class Hello {
-  public sayHello() {
-    return 'hello, world!';
-  }
-}
 export * from './identity/identity';
+export * from './log-group/log-group';
