@@ -789,6 +789,7 @@ new MultiTenantUserPool(scope: Construct, id: string, props?: UserPoolProps)
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.addTrigger">addTrigger</a></code> | Add a lambda trigger to a user pool operation. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.grant">grant</a></code> | [disable-awslint:no-grants]. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.registerIdentityProvider">registerIdentityProvider</a></code> | Register an identity provider with this user pool. |
+| <code><a href="#cdk-multi-tenant.MultiTenantUserPool.addMultiTenantClient">addMultiTenantClient</a></code> | *No description.* |
 
 ---
 
@@ -963,6 +964,12 @@ Register an identity provider with this user pool.
 - *Type:* aws-cdk-lib.interfaces.aws_cognito.IUserPoolIdentityProviderRef
 
 ---
+
+##### `addMultiTenantClient` <a name="addMultiTenantClient" id="cdk-multi-tenant.MultiTenantUserPool.addMultiTenantClient"></a>
+
+```typescript
+public addMultiTenantClient(): UserPoolClient
+```
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 

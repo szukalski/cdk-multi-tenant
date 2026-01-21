@@ -26,7 +26,10 @@ export class MultiTenantUserPool extends UserPool {
       removalPolicy: RemovalPolicy.DESTROY,
       ...props,
     });
-    this.userPoolClient = this.addClient('UserPoolClient', {
+    this.userPoolClient = this.addMultiTenantClient();
+  }
+  addMultiTenantClient(): UserPoolClient {
+    return this.addClient('UserPoolClient', {
       authFlows: { userPassword: true },
       readAttributes: new ClientAttributes()
         .withCustomAttributes(...['tenantId', 'role']),
