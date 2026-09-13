@@ -43,6 +43,7 @@ new MultiTenantLogGroup(scope: Construct, id: string, props?: LogGroupProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-multi-tenant.MultiTenantLogGroup.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-multi-tenant.MultiTenantLogGroup.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#cdk-multi-tenant.MultiTenantLogGroup.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#cdk-multi-tenant.MultiTenantLogGroup.addMetricFilter">addMetricFilter</a></code> | Create a new Metric Filter on this Log Group. |
 | <code><a href="#cdk-multi-tenant.MultiTenantLogGroup.addStream">addStream</a></code> | Create a new Log Stream for this Log Group. |
@@ -67,6 +68,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="cdk-multi-tenant.MultiTenantLogGroup.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="cdk-multi-tenant.MultiTenantLogGroup.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="cdk-multi-tenant.MultiTenantLogGroup.applyRemovalPolicy"></a>
 
@@ -668,6 +690,7 @@ new MultiTenantUserPool(scope: Construct, id: string, props?: UserPoolProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-multi-tenant.MultiTenantUserPool.with">with</a></code> | Applies one or more mixins to this construct. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.applyRemovalPolicy">applyRemovalPolicy</a></code> | Apply the given removal policy to this resource. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.addClient">addClient</a></code> | Add a new app client to this user pool. |
 | <code><a href="#cdk-multi-tenant.MultiTenantUserPool.addDomain">addDomain</a></code> | Associate a domain to this user pool. |
@@ -689,6 +712,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="cdk-multi-tenant.MultiTenantUserPool.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="cdk-multi-tenant.MultiTenantUserPool.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 ##### `applyRemovalPolicy` <a name="applyRemovalPolicy" id="cdk-multi-tenant.MultiTenantUserPool.applyRemovalPolicy"></a>
 
@@ -1221,6 +1265,7 @@ new SmithyServer(scope: Construct, id: string, props: SmithyServerProps)
 | **Name** | **Description** |
 | --- | --- |
 | <code><a href="#cdk-multi-tenant.SmithyServer.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#cdk-multi-tenant.SmithyServer.with">with</a></code> | Applies one or more mixins to this construct. |
 
 ---
 
@@ -1231,6 +1276,27 @@ public toString(): string
 ```
 
 Returns a string representation of this construct.
+
+##### `with` <a name="with" id="cdk-multi-tenant.SmithyServer.with"></a>
+
+```typescript
+public with(mixins: ...IMixin[]): IConstruct
+```
+
+Applies one or more mixins to this construct.
+
+Mixins are applied in order. The list of constructs is captured at the
+start of the call, so constructs added by a mixin will not be visited.
+Use multiple `with()` calls if subsequent mixins should apply to added
+constructs.
+
+###### `mixins`<sup>Required</sup> <a name="mixins" id="cdk-multi-tenant.SmithyServer.with.parameter.mixins"></a>
+
+- *Type:* ...constructs.IMixin[]
+
+The mixins to apply.
+
+---
 
 #### Static Functions <a name="Static Functions" id="Static Functions"></a>
 
